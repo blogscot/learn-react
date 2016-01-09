@@ -12,7 +12,8 @@ class User extends React.Component {
     this.updateLastName = this.updateLastName.bind(this);
   }
 
-  componentDidMount() {
+  // Runs (on client and server) before initial rendering
+  componentWillMount() {
     this.setState({fullName: this.state.firstName + " " + this.state.lastName});
   }
 
