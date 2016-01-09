@@ -1,0 +1,11 @@
+body {
+  background-color: yellow;
+}
+
+button {
+  margin: 3px;
+}
+
+input {
+  display: block;
+}
