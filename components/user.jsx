@@ -5,11 +5,6 @@ class User extends React.Component {
   constructor() {
     super();
     this.state = {firstName: "Uno", lastName: "Dos"};
-
-    // wire up the click / change handlers
-    this.handleClick = this.handleClick.bind(this);
-    this.updateFirstName = this.updateFirstName.bind(this);
-    this.updateLastName = this.updateLastName.bind(this);
   }
 
   // Runs (on client and server) before initial rendering
@@ -32,11 +27,11 @@ class User extends React.Component {
   render() {
     return <div>
       <form>
-        First name <input type="text" onChange={this.updateFirstName} value={this.state.firstName}
+        First name <input type="text" onChange={this.updateFirstName.bind(this)} value={this.state.firstName}
           placeholder="Please enter your first name" />
-        Last name <input type="text" onChange={this.updateLastName} value={this.state.lastName}
+        Last name <input type="text" onChange={this.updateLastName.bind(this)} value={this.state.lastName}
           placeholder="Please enter your last name" />
-        <button onClick={this.handleClick}>Add</button>
+        <button onClick={this.handleClick.bind(this)}>Add</button>
       </form>
       <div>
         Full Name: <span>{this.state.fullName}</span>
